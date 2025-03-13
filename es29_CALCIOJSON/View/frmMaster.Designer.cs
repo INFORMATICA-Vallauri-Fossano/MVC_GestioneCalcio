@@ -64,6 +64,7 @@
             // 
             // dgv
             // 
+            this.dgv.AllowUserToOrderColumns = true;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(12, 12);
             this.dgv.Name = "dgv";

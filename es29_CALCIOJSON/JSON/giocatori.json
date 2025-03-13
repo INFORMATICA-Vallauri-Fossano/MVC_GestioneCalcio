@@ -1,20 +1,20 @@
 [
   {
-    "Nome": "Lu",
-    "Ruolo": "PORTIERE",
-    "NumeroMaglia": "21",
-    "Squadra": "Cina"
+    "Nome": "Juan",
+    "Ruolo": "DIFENSORE",
+    "Squadra": "Perù",
+    "NumeroMaglia": "25"
+  },
+  {
+    "Nome": "Verdi",
+    "Ruolo": "ATTACCANTE",
+    "Squadra": "Italia",
+    "NumeroMaglia": "15"
   },
   {
     "Nome": "Juan",
-    "Ruolo": "DIFENSORE",
-    "NumeroMaglia": "15",
-    "Squadra": "Ecuador"
-  },
-  {
-    "Nome": "Giulio",
-    "Ruolo": "CENTROCAMPISTA",
-    "NumeroMaglia": "34",
-    "Squadra": "Croazia"
+    "Ruolo": "ATTACCANTE",
+    "Squadra": "Perù",
+    "NumeroMaglia": "17"
   }
 ]

@@ -237,8 +237,6 @@
     <EmbeddedResource Include="View\frmPartite.resx">
       <DependentUpon>frmPartite.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="JSON\giocatori.json" />
-    <None Include="JSON\partite.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -253,6 +251,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="JSON\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,18 +1,11 @@
 ﻿using es29_CALCIOJSON.Controller;
 using es29_CALCIOJSON.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace es29_CALCIOJSON.View
 {
-    public partial class frmPartite: frmMaster
+    public partial class frmPartite : frmMaster
     {
         public frmPartite()
         {
@@ -21,10 +14,10 @@ namespace es29_CALCIOJSON.View
         partitaController partitaController;
         clsPartita partita;
 
-public string SquadraOspite{get=>txtSquadraOspite.Text;set=>txtSquadraOspite.Text=value;}
-public string Arbitro{get=>txtArbitro.Text;set=>txtArbitro.Text=value;}
-public string SquadraCasa{get=>txtSquadraCasa.Text;set=>txtSquadraCasa.Text=value;}
-public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPartita.Text = value.ToString(); }
+        public string SquadraOspite { get => txtSquadraOspite.Text; set => txtSquadraOspite.Text = value; }
+        public string Arbitro { get => txtArbitro.Text; set => txtArbitro.Text = value; }
+        public string SquadraCasa { get => txtSquadraCasa.Text; set => txtSquadraCasa.Text = value; }
+        public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPartita.Text = value.ToString(); }
 
         private void frmPartite_Load(object sender, EventArgs e)
         {
@@ -43,14 +36,14 @@ public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPa
             {
                 MessageBox.Show(ex.Message);
             }
-        
+
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
             try
             {
-                partita = new clsPartita(IdPartita, SquadraCasa, SquadraOspite, Arbitro, new List<clsGoal>());
+                partita = new clsPartita(IdPartita, SquadraCasa, SquadraOspite, Arbitro);
                 partitaController.POST(partita);
 
                 dgv.DataSource = null;
@@ -67,7 +60,7 @@ public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPa
             if (dgv.CurrentRow.Index != -1)
             {
                 //giocatore = giocatoreController.GET(dgv.CurrentRow.Cells[0].Value.ToString());
-                partita = partitaController.GET(Convert.ToInt32(dgv.CurrentRow.Cells[3].Value));
+                partita = partitaController.GET(Convert.ToInt32(dgv.CurrentRow.Cells[0].Value));
                 SquadraOspite = partita.SquadraOspite;
                 Arbitro = partita.Arbitro;
                 SquadraCasa = partita.SquadraCasa;
@@ -107,6 +100,6 @@ public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPa
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
     }
 }

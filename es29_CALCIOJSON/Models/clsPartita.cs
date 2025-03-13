@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace es29_CALCIOJSON.Models
 {
@@ -12,24 +9,36 @@ namespace es29_CALCIOJSON.Models
         string squadraCasa;
         string squadraOspite;
         string arbitro;
-        List<clsGoal> goalList;
+        List<clsGoal> goalList = new List<clsGoal>();
 
-        public string SquadraOspite { get => squadraOspite; set {
-                if (value.Trim().Length < 2) throw new Exception("Squadra Ospite non valida, almeno 2 caratteri");
-                else squadraOspite = value;
-            }}
-        public string Arbitro { get => arbitro; set {
-                if (value.Trim().Length < 2) throw new Exception("Arbitro non valido, almeno 2 caratteri");
-                else arbitro = value;
-            }}
-        public string SquadraCasa { get => squadraCasa; set {
+        public int IdPartita { get => idPartita; set => idPartita = value; }
+        public string SquadraCasa
+        {
+            get => squadraCasa; set
+            {
                 if (value.Trim().Length < 2) throw new Exception("Squadra di Casa non valida, almeno 2 caratteri");
                 else squadraCasa = value;
-            }}
-        public int IdPartita { get => idPartita; set => idPartita = value; }
-        internal List<clsGoal> GoalList { get => goalList; set => goalList = value; }
+            }
+        }
+        public string SquadraOspite
+        {
+            get => squadraOspite; set
+            {
+                if (value.Trim().Length < 2) throw new Exception("Squadra Ospite non valida, almeno 2 caratteri");
+                else squadraOspite = value;
+            }
+        }
+        public string Arbitro
+        {
+            get => arbitro; set
+            {
+                if (value.Trim().Length < 2) throw new Exception("Arbitro non valido, almeno 2 caratteri");
+                else arbitro = value;
+            }
+        }
+        public List<clsGoal> GoalList { get => goalList; set => goalList = value; }
         public clsPartita() { }
-        public clsPartita(int idPartita, string squadraCasa, string squadraOspite, string arbitro, List<clsGoal> goalList)
+        public clsPartita(int idPartita, string squadraCasa, string squadraOspite, string arbitro)
         {
             IdPartita = idPartita;
             SquadraCasa = squadraCasa;
@@ -43,16 +52,16 @@ namespace es29_CALCIOJSON.Models
             int ris = 0;
             if (goalList != null)
             {
-                foreach(clsGoal g in goalList)
-                    if ((!g.Autogoal && g.Marcatore.Squadra == squadraCasa)||(g.Autogoal&&g.Marcatore.Squadra==squadraOspite)) ris++;
+                foreach (clsGoal g in goalList)
+                    if ((!g.Autogoal && g.Marcatore.Squadra == squadraCasa) || (g.Autogoal && g.Marcatore.Squadra == squadraOspite)) ris++;
             }
             return ris;
         }
         public int risTrasferta()
         {
             int ris = 0;
-            if(goalList!=null)
-                foreach(clsGoal g in goalList)
+            if (goalList != null)
+                foreach (clsGoal g in goalList)
                 {
                     if ((!g.Autogoal && g.Marcatore.Squadra == squadraOspite) || (g.Autogoal && g.Marcatore.Squadra == squadraCasa)) ris++;
                 }
@@ -71,7 +80,7 @@ namespace es29_CALCIOJSON.Models
         public string Visualizza()
         {
             return $"{IdPartita} - {SquadraCasa} - {SquadraOspite} - {Arbitro}\n" +
-                $"{string.Join("\n", goalList.ConvertAll<string>(g=>g.Visuazza()))}";
+                $"{string.Join("\n", goalList.ConvertAll<string>(g => g.Visuazza()))}";
         }
     }
 }

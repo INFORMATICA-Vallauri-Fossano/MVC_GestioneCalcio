@@ -1,8 +1,66 @@
 [
   {
-    "SquadraOspite": "Caserta",
-    "Arbitro": "Pacciani",
-    "SquadraCasa": "Ponte",
-    "IdPartita": 5
+    "IdPartita": 12,
+    "SquadraCasa": "Italia",
+    "SquadraOspite": "Cina",
+    "Arbitro": "Bellotti",
+    "GoalList": [
+      {
+        "IdPartita": 12,
+        "Numero": 1,
+        "Minuto": "56",
+        "Marcatore": {
+          "Nome": "Lu",
+          "Ruolo": "PORTIERE",
+          "Squadra": "Cina",
+          "NumeroMaglia": "21"
+        },
+        "Autogoal": false
+      },
+      {
+        "IdPartita": 12,
+        "Numero": 2,
+        "Minuto": "23",
+        "Marcatore": {
+          "Nome": "Verdi",
+          "Ruolo": "ATTACCANTE",
+          "Squadra": "Italia",
+          "NumeroMaglia": "15"
+        },
+        "Autogoal": true
+      }
+    ]
+  },
+  {
+    "IdPartita": 1,
+    "SquadraCasa": "Perù",
+    "SquadraOspite": "Cina",
+    "Arbitro": "Jonsales",
+    "GoalList": [
+      {
+        "IdPartita": 1,
+        "Numero": 1,
+        "Minuto": "34",
+        "Marcatore": {
+          "Nome": "Verdi",
+          "Ruolo": "ATTACCANTE",
+          "Squadra": "Italia",
+          "NumeroMaglia": "15"
+        },
+        "Autogoal": false
+      },
+      {
+        "IdPartita": 1,
+        "Numero": 2,
+        "Minuto": "90",
+        "Marcatore": {
+          "Nome": "Juan",
+          "Ruolo": "DIFENSORE",
+          "Squadra": "Perù",
+          "NumeroMaglia": "25"
+        },
+        "Autogoal": true
+      }
+    ]
   }
 ]

@@ -1,26 +1,18 @@
-﻿using System;
+﻿using es29_CALCIOJSON.Models;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 //
 using System.IO;
-using es29_CALCIOJSON.Models;
-using Microsoft.AspNetCore.JsonPatch;
-using Newtonsoft.Json;
-using System.Windows.Forms;
-using Microsoft.SqlServer.Server;
 
 namespace es29_CALCIOJSON.Controller
 {
     class giocatoreController
     {
         public clsGiocatore recGiocatore;
-        public List<clsGiocatore> lstGiocatori;
+        public List<clsGiocatore> lstGiocatori= new List<clsGiocatore>();
         string pathFile;
         public giocatoreController(string path)
         {
-            lstGiocatori = new List<clsGiocatore>();
             pathFile = path;
             if (File.Exists(path))
             {
@@ -67,7 +59,7 @@ namespace es29_CALCIOJSON.Controller
         public void POST(clsGiocatore giocatore)
         {
             lstGiocatori.Add(giocatore);
-            saveData(pathFile,lstGiocatori);
+            saveData(pathFile, lstGiocatori);
         }
         /// <summary>
         /// UPDATE
@@ -75,7 +67,7 @@ namespace es29_CALCIOJSON.Controller
         /// <param name="nome"></param>
         /// <param name="ruolo"></param>
         /// <param name="numero"></param>
-        public void PUT(string nome,string ruolo,string squadra,string numero)
+        public void PUT(string nome, string ruolo, string squadra, string numero)
         {
             int i = 0;
             bool trovato = false;
@@ -92,7 +84,7 @@ namespace es29_CALCIOJSON.Controller
             }
             if (trovato)
             {
-                saveData(pathFile,lstGiocatori);
+                saveData(pathFile, lstGiocatori);
             }
         }
         /// <summary>
@@ -105,10 +97,10 @@ namespace es29_CALCIOJSON.Controller
             saveData(pathFile, lstGiocatori);
         }
 
-        private void saveData(string pathFile,List<clsGiocatore> lstGiocatori)
+        private void saveData(string pathFile, List<clsGiocatore> lstGiocatori)
         {
-            string jsonData = JsonConvert.SerializeObject(lstGiocatori,Formatting.Indented);
-            File.WriteAllText(pathFile,jsonData);
+            string jsonData = JsonConvert.SerializeObject(lstGiocatori, Formatting.Indented);
+            File.WriteAllText(pathFile, jsonData);
         }
     }
 }

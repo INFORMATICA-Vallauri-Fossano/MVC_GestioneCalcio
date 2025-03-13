@@ -1,13 +1,7 @@
 ﻿using es29_CALCIOJSON.Models;
-using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace es29_CALCIOJSON.Controller
 {
@@ -18,14 +12,14 @@ namespace es29_CALCIOJSON.Controller
 
         public partitaController(string path)
         {
-            listPartite= new List<clsPartita>();
+            listPartite = new List<clsPartita>();
             pathFile = path;
             if (File.Exists(path))
             {
                 string jsonDati = File.ReadAllText(path);
-                listPartite= JsonConvert.DeserializeObject<List<clsPartita>>(jsonDati);
+                listPartite = JsonConvert.DeserializeObject<List<clsPartita>>(jsonDati);
                 //essenziale in quanto jsonconverter restituisce un null se non può parsare nulla
-                if (listPartite== null) listPartite= new List<clsPartita>();
+                if (listPartite == null) listPartite = new List<clsPartita>();
             }
             //else File.Create(path);   superficiale
         }
@@ -45,22 +39,22 @@ namespace es29_CALCIOJSON.Controller
         public void POST(clsGoal goal)
         {
             List<clsGoal> goals = GET(goal.IdPartita).GoalList;
-            goal.Numero=goals.Count + 1;
+            goal.Numero = goals.Count + 1;
             goals.Add(goal);
             saveData(pathFile, listPartite);
         }
-        public void PUT(int id,string squadraCasa,string squadraospite,string arbitro)
+        public void PUT(int id, string squadraCasa, string squadraospite, string arbitro)
         {
 
             int i = 0;
             bool trovato = false;
             while (i < listPartite.Count && !trovato)
             {
-                if (listPartite[i].IdPartita== id)
+                if (listPartite[i].IdPartita == id)
                 {
-                    listPartite[i].SquadraCasa= squadraCasa;
-                    listPartite[i].SquadraOspite= squadraospite;
-                    listPartite[i].Arbitro= arbitro;
+                    listPartite[i].SquadraCasa = squadraCasa;
+                    listPartite[i].SquadraOspite = squadraospite;
+                    listPartite[i].Arbitro = arbitro;
                     trovato = true;
                 }
                 else i++;
@@ -72,13 +66,13 @@ namespace es29_CALCIOJSON.Controller
         }
         public void DELETE(int id)
         {
-            listPartite.RemoveAll(g => g.IdPartita== id);
+            listPartite.RemoveAll(g => g.IdPartita == id);
             saveData(pathFile, listPartite);
         }
 
-        private void saveData(string pathFile, List<clsPartita> lstGiocatori)
+        private void saveData(string pathFile, List<clsPartita> list)
         {
-            string jsonData = JsonConvert.SerializeObject(lstGiocatori, Formatting.Indented);
+            string jsonData = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText(pathFile, jsonData);
         }
 
@@ -87,7 +81,8 @@ namespace es29_CALCIOJSON.Controller
             List<clsGoal> goals = GET(idPartita).GoalList;
             goals.RemoveAt(numero - 1);
             //si procede ad aggiornare la proprietà Numero per i Goal di questo IdPartita
-            for (int i = numero; i < goals.Count; i++)  goals[i].Numero = i;
+            goals.ForEach(g => g.Numero = goals.IndexOf(g) + 1);
+
 
             saveData(pathFile, listPartite);
         }

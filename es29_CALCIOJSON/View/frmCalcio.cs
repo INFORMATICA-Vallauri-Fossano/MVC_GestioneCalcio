@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-//
+﻿//
 using es29_CALCIOJSON.View;
+using System;
+using System.Windows.Forms;
 
 namespace es29_CALCIOJSON
 {
-    public partial class frmCalcio: Form
+    public partial class frmCalcio : Form
     {
         public frmCalcio()
         {
@@ -28,7 +21,7 @@ namespace es29_CALCIOJSON
         private void btnPartite_Click(object sender, EventArgs e)
         {
             frmPartite frm = new frmPartite();
-                frm.ShowDialog();
+            frm.ShowDialog();
 
         }
 

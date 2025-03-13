@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using es29_CALCIOJSON.Controller;
 using es29_CALCIOJSON.Models;
-using es29_CALCIOJSON.Controller;
-using System.Runtime.InteropServices;
+using System;
+using System.Windows.Forms;
 
 namespace es29_CALCIOJSON.View
 {
-    public partial class frmGiocatori: frmMaster
+    public partial class frmGiocatori : frmMaster
     {
         public frmGiocatori()
         {
@@ -101,7 +93,7 @@ namespace es29_CALCIOJSON.View
         {
             try
             {
-            giocatoreController.PUT(Nome, Ruolo,Squadra, NumeroMaglia);
+                giocatoreController.PUT(Nome, Ruolo, Squadra, NumeroMaglia);
                 dgv.DataSource = null;
                 dgv.DataSource = giocatoreController.GET();
             }

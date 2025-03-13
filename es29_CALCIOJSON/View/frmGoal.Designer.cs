@@ -33,20 +33,30 @@
             this.lblRuolo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.chkAutoGoal = new System.Windows.Forms.CheckBox();
-            this.btnMinuto = new System.Windows.Forms.Button();
-            this.btnAggiungiGoal = new System.Windows.Forms.Button();
-            this.btnTogliGoal = new System.Windows.Forms.Button();
             this.dgvPartite = new System.Windows.Forms.DataGridView();
-            this.dgvGiocatori = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbIdPartita = new System.Windows.Forms.ComboBox();
+            this.cmbNumero = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMinuto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartite)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGiocatori)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // lblNumeroMaglia
             // 
             this.lblNumeroMaglia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lblNumeroMaglia.Location = new System.Drawing.Point(12, 305);
+            this.lblNumeroMaglia.Location = new System.Drawing.Point(12, 308);
             this.lblNumeroMaglia.Name = "lblNumeroMaglia";
             this.lblNumeroMaglia.Size = new System.Drawing.Size(125, 23);
             this.lblNumeroMaglia.TabIndex = 23;
@@ -89,33 +99,6 @@
             this.chkAutoGoal.Text = "AUTOGOAL";
             this.chkAutoGoal.UseVisualStyleBackColor = true;
             // 
-            // btnMinuto
-            // 
-            this.btnMinuto.Location = new System.Drawing.Point(143, 263);
-            this.btnMinuto.Name = "btnMinuto";
-            this.btnMinuto.Size = new System.Drawing.Size(240, 23);
-            this.btnMinuto.TabIndex = 28;
-            this.btnMinuto.UseVisualStyleBackColor = true;
-            // 
-            // btnAggiungiGoal
-            // 
-            this.btnAggiungiGoal.Location = new System.Drawing.Point(668, 168);
-            this.btnAggiungiGoal.Name = "btnAggiungiGoal";
-            this.btnAggiungiGoal.Size = new System.Drawing.Size(120, 41);
-            this.btnAggiungiGoal.TabIndex = 28;
-            this.btnAggiungiGoal.Text = "AGGIUNGI";
-            this.btnAggiungiGoal.UseVisualStyleBackColor = true;
-            this.btnAggiungiGoal.Click += new System.EventHandler(this.btnAggiungiGoal_Click);
-            // 
-            // btnTogliGoal
-            // 
-            this.btnTogliGoal.Location = new System.Drawing.Point(668, 287);
-            this.btnTogliGoal.Name = "btnTogliGoal";
-            this.btnTogliGoal.Size = new System.Drawing.Size(120, 41);
-            this.btnTogliGoal.TabIndex = 29;
-            this.btnTogliGoal.Text = "TOGLI";
-            this.btnTogliGoal.UseVisualStyleBackColor = true;
-            // 
             // dgvPartite
             // 
             this.dgvPartite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -126,35 +109,50 @@
             this.dgvPartite.Size = new System.Drawing.Size(776, 164);
             this.dgvPartite.TabIndex = 26;
             // 
-            // dgvGiocatori
+            // cmbIdPartita
             // 
-            this.dgvGiocatori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGiocatori.Location = new System.Drawing.Point(797, 12);
-            this.dgvGiocatori.Name = "dgvGiocatori";
-            this.dgvGiocatori.RowHeadersWidth = 51;
-            this.dgvGiocatori.RowTemplate.Height = 24;
-            this.dgvGiocatori.Size = new System.Drawing.Size(506, 486);
-            this.dgvGiocatori.TabIndex = 30;
+            this.cmbIdPartita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIdPartita.FormattingEnabled = true;
+            this.cmbIdPartita.Location = new System.Drawing.Point(143, 303);
+            this.cmbIdPartita.Name = "cmbIdPartita";
+            this.cmbIdPartita.Size = new System.Drawing.Size(121, 24);
+            this.cmbIdPartita.TabIndex = 31;
+            this.cmbIdPartita.SelectedIndexChanged += new System.EventHandler(this.cmbIdPartita_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cmbNumero
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(143, 303);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 31;
+            this.cmbNumero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNumero.FormattingEnabled = true;
+            this.cmbNumero.Location = new System.Drawing.Point(504, 306);
+            this.cmbNumero.Name = "cmbNumero";
+            this.cmbNumero.Size = new System.Drawing.Size(123, 24);
+            this.cmbNumero.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
+            this.label1.Location = new System.Drawing.Point(421, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 23);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "NUMERO";
+            // 
+            // txtMinuto
+            // 
+            this.txtMinuto.Location = new System.Drawing.Point(143, 261);
+            this.txtMinuto.Name = "txtMinuto";
+            this.txtMinuto.Size = new System.Drawing.Size(232, 22);
+            this.txtMinuto.TabIndex = 34;
             // 
             // frmGoal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 516);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dgvGiocatori);
-            this.Controls.Add(this.btnTogliGoal);
-            this.Controls.Add(this.btnMinuto);
-            this.Controls.Add(this.btnAggiungiGoal);
+            this.ClientSize = new System.Drawing.Size(805, 516);
+            this.Controls.Add(this.txtMinuto);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbNumero);
+            this.Controls.Add(this.cmbIdPartita);
             this.Controls.Add(this.chkAutoGoal);
             this.Controls.Add(this.dgvPartite);
             this.Controls.Add(this.lblNumeroMaglia);
@@ -164,22 +162,20 @@
             this.Name = "frmGoal";
             this.Text = "frmGoal";
             this.Load += new System.EventHandler(this.frmGoal_Load);
-            this.Controls.SetChildIndex(this.btnInsert, 0);
-            this.Controls.SetChildIndex(this.btnDelete, 0);
-            this.Controls.SetChildIndex(this.btnEdit, 0);
             this.Controls.SetChildIndex(this.lblNome, 0);
             this.Controls.SetChildIndex(this.lblRuolo, 0);
             this.Controls.SetChildIndex(this.cmbMarcatore, 0);
             this.Controls.SetChildIndex(this.lblNumeroMaglia, 0);
             this.Controls.SetChildIndex(this.dgvPartite, 0);
             this.Controls.SetChildIndex(this.chkAutoGoal, 0);
-            this.Controls.SetChildIndex(this.btnAggiungiGoal, 0);
-            this.Controls.SetChildIndex(this.btnMinuto, 0);
-            this.Controls.SetChildIndex(this.btnTogliGoal, 0);
-            this.Controls.SetChildIndex(this.dgvGiocatori, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.cmbIdPartita, 0);
+            this.Controls.SetChildIndex(this.cmbNumero, 0);
+            this.Controls.SetChildIndex(this.btnInsert, 0);
+            this.Controls.SetChildIndex(this.btnDelete, 0);
+            this.Controls.SetChildIndex(this.btnEdit, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.txtMinuto, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGiocatori)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,11 +187,10 @@
         private System.Windows.Forms.Label lblRuolo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.CheckBox chkAutoGoal;
-        private System.Windows.Forms.Button btnMinuto;
-        private System.Windows.Forms.Button btnAggiungiGoal;
-        private System.Windows.Forms.Button btnTogliGoal;
         private System.Windows.Forms.DataGridView dgvPartite;
-        private System.Windows.Forms.DataGridView dgvGiocatori;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbIdPartita;
+        private System.Windows.Forms.ComboBox cmbNumero;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtMinuto;
     }
 }
