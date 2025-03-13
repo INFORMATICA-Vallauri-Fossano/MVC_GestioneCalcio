@@ -79,8 +79,8 @@ namespace es29_CALCIOJSON.Models
         }
         public string Visualizza()
         {
-            return $"{IdPartita} - {SquadraCasa} - {SquadraOspite} - {Arbitro}\n" +
-                $"{string.Join("\n", goalList.ConvertAll<string>(g => g.Visuazza()))}";
+            return $"ID:{IdPartita} - Casa:{SquadraCasa} - Transferta:{SquadraOspite} - Arbitro:{Arbitro}\n" +
+                $"[{string.Join("]\n[", goalList.ConvertAll<string>(g => g.Visuazza()))}]";
         }
     }
 }

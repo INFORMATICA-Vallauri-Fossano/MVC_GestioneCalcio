@@ -61,13 +61,14 @@ namespace es29_CALCIOJSON.View
             {
                 //giocatore = giocatoreController.GET(dgv.CurrentRow.Cells[0].Value.ToString());
                 partita = partitaController.GET(Convert.ToInt32(dgv.CurrentRow.Cells[0].Value));
+                MessageBox.Show($"Nella partita: {partita.Visualizza()}\n\nEsito => {partita.Vincitrice()}: {partita.Risultato()}");
                 SquadraOspite = partita.SquadraOspite;
                 Arbitro = partita.Arbitro;
                 SquadraCasa = partita.SquadraCasa;
                 IdPartita = partita.IdPartita;
 
-                dgvGoals.DataSource = null;
-                dgvGoals.DataSource = partita.GoalList;
+                dgvEsiti.DataSource = null;
+                dgvEsiti.DataSource = partita.GoalList;
             }
         }
 

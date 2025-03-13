@@ -35,9 +35,10 @@
             // 
             // btnGiocatori
             // 
-            this.btnGiocatori.Location = new System.Drawing.Point(12, 42);
+            this.btnGiocatori.Location = new System.Drawing.Point(9, 34);
+            this.btnGiocatori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGiocatori.Name = "btnGiocatori";
-            this.btnGiocatori.Size = new System.Drawing.Size(195, 40);
+            this.btnGiocatori.Size = new System.Drawing.Size(146, 32);
             this.btnGiocatori.TabIndex = 0;
             this.btnGiocatori.Text = "GIOCATORI";
             this.btnGiocatori.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // btnPartite
             // 
-            this.btnPartite.Location = new System.Drawing.Point(12, 88);
+            this.btnPartite.Location = new System.Drawing.Point(9, 72);
+            this.btnPartite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPartite.Name = "btnPartite";
-            this.btnPartite.Size = new System.Drawing.Size(195, 40);
+            this.btnPartite.Size = new System.Drawing.Size(146, 32);
             this.btnPartite.TabIndex = 1;
             this.btnPartite.Text = "PARTITE";
             this.btnPartite.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btnGoal
             // 
-            this.btnGoal.Location = new System.Drawing.Point(12, 134);
+            this.btnGoal.Location = new System.Drawing.Point(9, 109);
+            this.btnGoal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGoal.Name = "btnGoal";
-            this.btnGoal.Size = new System.Drawing.Size(195, 40);
+            this.btnGoal.Size = new System.Drawing.Size(146, 32);
             this.btnGoal.TabIndex = 2;
             this.btnGoal.Text = "GOAL";
             this.btnGoal.UseVisualStyleBackColor = true;
@@ -65,12 +68,13 @@
             // 
             // frmCalcio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(166, 162);
             this.Controls.Add(this.btnGoal);
             this.Controls.Add(this.btnPartite);
             this.Controls.Add(this.btnGiocatori);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCalcio";
             this.Text = "GESTIONE GOAL";
             this.ResumeLayout(false);

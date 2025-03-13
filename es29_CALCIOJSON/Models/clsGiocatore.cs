@@ -58,7 +58,7 @@ namespace es29_CALCIOJSON.Models
         //METODI
         public string Visualizza()
         {
-            return $"{Nome} - {Ruolo} - {Squadra} - {NumeroMaglia}";
+            return $"{Nome} - {Ruolo} - {Squadra} - maglia:{NumeroMaglia}";
         }
         public override string ToString()
         {

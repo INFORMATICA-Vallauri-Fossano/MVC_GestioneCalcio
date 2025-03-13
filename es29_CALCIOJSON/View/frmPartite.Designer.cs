@@ -36,8 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtArbitro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvGoals = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGoals)).BeginInit();
+            this.dgvEsiti = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEsiti)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -54,84 +54,93 @@
             // 
             // txtSquadraOspite
             // 
-            this.txtSquadraOspite.Location = new System.Drawing.Point(167, 258);
+            this.txtSquadraOspite.Location = new System.Drawing.Point(125, 210);
+            this.txtSquadraOspite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSquadraOspite.Name = "txtSquadraOspite";
-            this.txtSquadraOspite.Size = new System.Drawing.Size(208, 22);
+            this.txtSquadraOspite.Size = new System.Drawing.Size(157, 20);
             this.txtSquadraOspite.TabIndex = 20;
             // 
             // lblNumeroMaglia
             // 
             this.lblNumeroMaglia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lblNumeroMaglia.Location = new System.Drawing.Point(12, 260);
+            this.lblNumeroMaglia.Location = new System.Drawing.Point(9, 211);
+            this.lblNumeroMaglia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumeroMaglia.Name = "lblNumeroMaglia";
-            this.lblNumeroMaglia.Size = new System.Drawing.Size(149, 23);
+            this.lblNumeroMaglia.Size = new System.Drawing.Size(112, 19);
             this.lblNumeroMaglia.TabIndex = 19;
             this.lblNumeroMaglia.Text = "SQUADRA OSPITE";
             // 
             // txtIdPartita
             // 
-            this.txtIdPartita.Location = new System.Drawing.Point(167, 225);
+            this.txtIdPartita.Location = new System.Drawing.Point(125, 183);
+            this.txtIdPartita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIdPartita.Name = "txtIdPartita";
-            this.txtIdPartita.Size = new System.Drawing.Size(208, 22);
+            this.txtIdPartita.Size = new System.Drawing.Size(157, 20);
             this.txtIdPartita.TabIndex = 18;
             // 
             // lblSquadra
             // 
             this.lblSquadra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lblSquadra.Location = new System.Drawing.Point(12, 227);
+            this.lblSquadra.Location = new System.Drawing.Point(9, 184);
+            this.lblSquadra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSquadra.Name = "lblSquadra";
-            this.lblSquadra.Size = new System.Drawing.Size(149, 23);
+            this.lblSquadra.Size = new System.Drawing.Size(112, 19);
             this.lblSquadra.TabIndex = 17;
             this.lblSquadra.Text = "ID PARTITA";
             // 
             // txtSquadraCasa
             // 
-            this.txtSquadraCasa.Location = new System.Drawing.Point(167, 295);
+            this.txtSquadraCasa.Location = new System.Drawing.Point(125, 240);
+            this.txtSquadraCasa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSquadraCasa.Name = "txtSquadraCasa";
-            this.txtSquadraCasa.Size = new System.Drawing.Size(208, 22);
+            this.txtSquadraCasa.Size = new System.Drawing.Size(157, 20);
             this.txtSquadraCasa.TabIndex = 22;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.label1.Location = new System.Drawing.Point(12, 297);
+            this.label1.Location = new System.Drawing.Point(9, 241);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 23);
+            this.label1.Size = new System.Drawing.Size(112, 19);
             this.label1.TabIndex = 21;
             this.label1.Text = "SQUADRA CASA";
             // 
             // txtArbitro
             // 
-            this.txtArbitro.Location = new System.Drawing.Point(167, 332);
+            this.txtArbitro.Location = new System.Drawing.Point(125, 270);
+            this.txtArbitro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtArbitro.Name = "txtArbitro";
-            this.txtArbitro.Size = new System.Drawing.Size(208, 22);
+            this.txtArbitro.Size = new System.Drawing.Size(157, 20);
             this.txtArbitro.TabIndex = 24;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.label2.Location = new System.Drawing.Point(12, 334);
+            this.label2.Location = new System.Drawing.Point(9, 271);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 23);
+            this.label2.Size = new System.Drawing.Size(112, 19);
             this.label2.TabIndex = 23;
             this.label2.Text = "ARBITRO";
             // 
-            // dgvGoals
+            // dgvEsiti
             // 
-            this.dgvGoals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGoals.Location = new System.Drawing.Point(382, 169);
-            this.dgvGoals.Name = "dgvGoals";
-            this.dgvGoals.RowHeadersWidth = 51;
-            this.dgvGoals.RowTemplate.Height = 24;
-            this.dgvGoals.Size = new System.Drawing.Size(406, 188);
-            this.dgvGoals.TabIndex = 25;
+            this.dgvEsiti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEsiti.Location = new System.Drawing.Point(286, 137);
+            this.dgvEsiti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEsiti.Name = "dgvEsiti";
+            this.dgvEsiti.RowHeadersWidth = 51;
+            this.dgvEsiti.RowTemplate.Height = 24;
+            this.dgvEsiti.Size = new System.Drawing.Size(304, 153);
+            this.dgvEsiti.TabIndex = 25;
             // 
             // frmPartite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 367);
-            this.Controls.Add(this.dgvGoals);
+            this.ClientSize = new System.Drawing.Size(602, 298);
+            this.Controls.Add(this.dgvEsiti);
             this.Controls.Add(this.txtArbitro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSquadraCasa);
@@ -154,8 +163,8 @@
             this.Controls.SetChildIndex(this.btnInsert, 0);
             this.Controls.SetChildIndex(this.btnDelete, 0);
             this.Controls.SetChildIndex(this.btnEdit, 0);
-            this.Controls.SetChildIndex(this.dgvGoals, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGoals)).EndInit();
+            this.Controls.SetChildIndex(this.dgvEsiti, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEsiti)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +180,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtArbitro;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvGoals;
+        private System.Windows.Forms.DataGridView dgvEsiti;
     }
 }

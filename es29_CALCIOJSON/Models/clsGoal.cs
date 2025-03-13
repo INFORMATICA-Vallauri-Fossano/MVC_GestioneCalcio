@@ -33,7 +33,9 @@ namespace es29_CALCIOJSON.Models
         public clsGoal() { }
         internal string Visuazza()
         {
-            return $"{Marcatore.Visualizza()}\n{Minuto} - {Autogoal}";
+            string auto = "- Autogoal";
+            if (!Autogoal) auto = ""; 
+            return $"{Marcatore.Visualizza()} - minuto:{Minuto} {auto}";
         }
     }
 }
