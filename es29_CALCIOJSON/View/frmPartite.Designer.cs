@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtArbitro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgvGoals = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGoals)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -114,11 +116,22 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "ARBITRO";
             // 
+            // dgvGoals
+            // 
+            this.dgvGoals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGoals.Location = new System.Drawing.Point(382, 169);
+            this.dgvGoals.Name = "dgvGoals";
+            this.dgvGoals.RowHeadersWidth = 51;
+            this.dgvGoals.RowTemplate.Height = 24;
+            this.dgvGoals.Size = new System.Drawing.Size(406, 188);
+            this.dgvGoals.TabIndex = 25;
+            // 
             // frmPartite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(803, 367);
+            this.Controls.Add(this.dgvGoals);
             this.Controls.Add(this.txtArbitro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSquadraCasa);
@@ -128,19 +141,21 @@
             this.Controls.Add(this.txtIdPartita);
             this.Controls.Add(this.lblSquadra);
             this.Name = "frmPartite";
-            this.Text = "s";
+            this.Text = "PARTITE";
             this.Load += new System.EventHandler(this.frmPartite_Load);
             this.Controls.SetChildIndex(this.lblSquadra, 0);
             this.Controls.SetChildIndex(this.txtIdPartita, 0);
             this.Controls.SetChildIndex(this.lblNumeroMaglia, 0);
             this.Controls.SetChildIndex(this.txtSquadraOspite, 0);
-            this.Controls.SetChildIndex(this.btnInsert, 0);
-            this.Controls.SetChildIndex(this.btnDelete, 0);
-            this.Controls.SetChildIndex(this.btnEdit, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.txtSquadraCasa, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtArbitro, 0);
+            this.Controls.SetChildIndex(this.btnInsert, 0);
+            this.Controls.SetChildIndex(this.btnDelete, 0);
+            this.Controls.SetChildIndex(this.btnEdit, 0);
+            this.Controls.SetChildIndex(this.dgvGoals, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGoals)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +171,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtArbitro;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvGoals;
     }
 }

@@ -29,6 +29,7 @@ namespace es29_CALCIOJSON.Controller
                 //essenziale in quanto jsonconverter restituisce un null se non può parsare nulla
                 if (lstGiocatori == null) lstGiocatori = new List<clsGiocatore>();
             }
+            //else File.Create(path);   superficiale
         }
         //CRUD
         //CREATE - READ- UPDATE - DELETE

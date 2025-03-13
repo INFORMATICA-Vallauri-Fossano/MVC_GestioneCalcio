@@ -47,5 +47,10 @@ namespace es29_CALCIOJSON.Models
             NumeroMaglia = _numeroMaglia;
         }
         public clsGiocatore() { }
+        //METODI
+        public string Visualizza()
+        {
+            return $"{Nome} - {Ruolo} - {Squadra} - {NumeroMaglia}";
+        }
     }
 }

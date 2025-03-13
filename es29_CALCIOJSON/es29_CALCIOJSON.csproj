@@ -176,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\giocatoreController.cs" />
+    <Compile Include="Controller\goalController.cs" />
     <Compile Include="Controller\partitaController.cs" />
     <Compile Include="Models\clsGiocatore.cs" />
     <Compile Include="Models\clsGoal.cs" />
@@ -227,12 +228,17 @@
     <EmbeddedResource Include="View\frmGiocatori.resx">
       <DependentUpon>frmGiocatori.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmGoal.resx">
+      <DependentUpon>frmGoal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmMaster.resx">
       <DependentUpon>frmMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmPartite.resx">
       <DependentUpon>frmPartite.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="JSON\giocatori.json" />
+    <None Include="JSON\partite.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -247,8 +253,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JSON\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

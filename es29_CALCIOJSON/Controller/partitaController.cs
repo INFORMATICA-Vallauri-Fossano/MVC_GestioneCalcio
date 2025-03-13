@@ -27,6 +27,7 @@ namespace es29_CALCIOJSON.Controller
                 //essenziale in quanto jsonconverter restituisce un null se non può parsare nulla
                 if (listPartite== null) listPartite= new List<clsPartita>();
             }
+            //else File.Create(path);   superficiale
         }
         public List<clsPartita> GET()
         {
@@ -39,6 +40,13 @@ namespace es29_CALCIOJSON.Controller
         public void POST(clsPartita partita)
         {
             listPartite.Add(partita);
+            saveData(pathFile, listPartite);
+        }
+        public void POST(clsGoal goal)
+        {
+            List<clsGoal> goals = GET(goal.IdPartita).GoalList;
+            goal.Numero=goals.Count + 1;
+            goals.Add(goal);
             saveData(pathFile, listPartite);
         }
         public void PUT(int id,string squadraCasa,string squadraospite,string arbitro)
@@ -72,6 +80,23 @@ namespace es29_CALCIOJSON.Controller
         {
             string jsonData = JsonConvert.SerializeObject(lstGiocatori, Formatting.Indented);
             File.WriteAllText(pathFile, jsonData);
+        }
+
+        internal void DELETE(int idPartita, int numero)
+        {
+            List<clsGoal> goals = GET(idPartita).GoalList;
+            goals.RemoveAt(numero - 1);
+            //si procede ad aggiornare la proprietà Numero per i Goal di questo IdPartita
+            for (int i = numero; i < goals.Count; i++)  goals[i].Numero = i;
+
+            saveData(pathFile, listPartite);
+        }
+
+        internal void PUT(clsGoal goal)
+        {
+            DELETE(goal.IdPartita, goal.Numero);    //rindondante il salvataggio dei dati
+            POST(goal);
+            //saveData(pathFile, listPartite); rindondante
         }
     }
 }

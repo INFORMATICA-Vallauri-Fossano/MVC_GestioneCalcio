@@ -64,7 +64,8 @@ namespace es29_CALCIOJSON.View
 
         private void frmGiocatori_Load(object sender, EventArgs e)
         {
-            giocatoreController = new giocatoreController(@"giocatori.json");
+            giocatoreController = new giocatoreController(@"../../JSON/giocatori.json");
+            //pure qua il try catch noon si potrebbe evitare?
             try
             {
                 dgv.DataSource = null;

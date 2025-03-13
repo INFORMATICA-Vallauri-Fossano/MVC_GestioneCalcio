@@ -28,7 +28,8 @@ public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPa
 
         private void frmPartite_Load(object sender, EventArgs e)
         {
-            partitaController = new partitaController(@"partite.json");
+            partitaController = new partitaController(@"../../JSON/partite.json");
+            //a che serve il try catch qui? vorrei toglierlo
             try
             {
                 dgv.DataSource = null;
@@ -67,12 +68,13 @@ public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPa
             {
                 //giocatore = giocatoreController.GET(dgv.CurrentRow.Cells[0].Value.ToString());
                 partita = partitaController.GET(Convert.ToInt32(dgv.CurrentRow.Cells[3].Value));
-                MessageBox.Show(dgv.CurrentRow.Index + " " + partita.ToString());
                 SquadraOspite = partita.SquadraOspite;
                 Arbitro = partita.Arbitro;
                 SquadraCasa = partita.SquadraCasa;
                 IdPartita = partita.IdPartita;
 
+                dgvGoals.DataSource = null;
+                dgvGoals.DataSource = partita.GoalList;
             }
         }
 
@@ -92,6 +94,8 @@ public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPa
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //vorrei togliere il try-catch ma IdPartita è un input utente
+            //nonostante sia preso dalle combobox...
             try
             {
                 partitaController.DELETE(IdPartita);
@@ -103,5 +107,6 @@ public int IdPartita { get => Convert.ToInt32(txtIdPartita.Text); set => txtIdPa
                 MessageBox.Show(ex.Message);
             }
         }
+        
     }
 }

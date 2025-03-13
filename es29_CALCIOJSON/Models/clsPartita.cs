@@ -37,5 +37,41 @@ namespace es29_CALCIOJSON.Models
             Arbitro = arbitro;
             GoalList = goalList;
         }
+
+        public int risCasa()
+        {
+            int ris = 0;
+            if (goalList != null)
+            {
+                foreach(clsGoal g in goalList)
+                    if ((!g.Autogoal && g.Marcatore.Squadra == squadraCasa)||(g.Autogoal&&g.Marcatore.Squadra==squadraOspite)) ris++;
+            }
+            return ris;
+        }
+        public int risTrasferta()
+        {
+            int ris = 0;
+            if(goalList!=null)
+                foreach(clsGoal g in goalList)
+                {
+                    if ((!g.Autogoal && g.Marcatore.Squadra == squadraOspite) || (g.Autogoal && g.Marcatore.Squadra == squadraCasa)) ris++;
+                }
+            return ris;
+        }
+        public string Vincitrice()
+        {
+            if (risCasa() > risTrasferta()) return squadraCasa;
+            else if (risCasa() < risTrasferta()) return squadraOspite;
+            else return "Pareggio";
+        }
+        public string Risultato()
+        {
+            return $"{risCasa()} - {risTrasferta()}";
+        }
+        public string Visualizza()
+        {
+            return $"{IdPartita} - {SquadraCasa} - {SquadraOspite} - {Arbitro}\n" +
+                $"{string.Join("\n", goalList.ConvertAll<string>(g=>g.Visuazza()))}";
+        }
     }
 }
