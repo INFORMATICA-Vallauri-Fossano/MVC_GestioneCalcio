@@ -33,8 +33,12 @@ namespace es29_CALCIOJSON.Controller
         }
         public void POST(clsPartita partita)
         {
-            listPartite.Add(partita);
-            saveData(pathFile, listPartite);
+            if (listPartite.FindIndex(p => p.IdPartita == partita.IdPartita) != -1)
+            {
+                listPartite.Add(partita);
+                saveData(pathFile, listPartite);
+            }
+            else throw new System.Exception("IdPartita già presente");
         }
         public void POST(clsGoal goal)
         {

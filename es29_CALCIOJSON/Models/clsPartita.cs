@@ -5,11 +5,20 @@ namespace es29_CALCIOJSON.Models
 {
     class clsPartita
     {
+        class goalList : IEnumerable<clsGoal>
+        {
+            IEnumerable<clsGoal> list;
+            IEnumerable<clsGoal>.GetEnumerator(){
+
+                }
+        }
         int idPartita;
         string squadraCasa;
         string squadraOspite;
         string arbitro;
-        List<clsGoal> goalList = new List<clsGoal>();
+
+
+        goalList goalList=new goalList();
 
         public int IdPartita { get => idPartita; set => idPartita = value; }
         public string SquadraCasa
@@ -44,7 +53,6 @@ namespace es29_CALCIOJSON.Models
             SquadraCasa = squadraCasa;
             SquadraOspite = squadraOspite;
             Arbitro = arbitro;
-            GoalList = goalList;
         }
 
         public int risCasa()

@@ -53,25 +53,28 @@
             // lblNome
             // 
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lblNome.Location = new System.Drawing.Point(12, 239);
+            this.lblNome.Location = new System.Drawing.Point(9, 194);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(125, 23);
+            this.lblNome.Size = new System.Drawing.Size(120, 19);
             this.lblNome.TabIndex = 8;
             this.lblNome.Text = "NOME";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(143, 237);
+            this.txtNome.Location = new System.Drawing.Point(133, 193);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(232, 22);
+            this.txtNome.Size = new System.Drawing.Size(149, 20);
             this.txtNome.TabIndex = 9;
             // 
             // lblRuolo
             // 
             this.lblRuolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lblRuolo.Location = new System.Drawing.Point(12, 275);
+            this.lblRuolo.Location = new System.Drawing.Point(9, 223);
+            this.lblRuolo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRuolo.Name = "lblRuolo";
-            this.lblRuolo.Size = new System.Drawing.Size(125, 23);
+            this.lblRuolo.Size = new System.Drawing.Size(120, 19);
             this.lblRuolo.TabIndex = 10;
             this.lblRuolo.Text = "RUOLO";
             // 
@@ -79,48 +82,53 @@
             // 
             this.cmbRuolo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRuolo.FormattingEnabled = true;
-            this.cmbRuolo.Location = new System.Drawing.Point(143, 273);
+            this.cmbRuolo.Location = new System.Drawing.Point(133, 222);
+            this.cmbRuolo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbRuolo.Name = "cmbRuolo";
-            this.cmbRuolo.Size = new System.Drawing.Size(232, 24);
+            this.cmbRuolo.Size = new System.Drawing.Size(149, 21);
             this.cmbRuolo.TabIndex = 12;
             // 
             // txtSquadra
             // 
-            this.txtSquadra.Location = new System.Drawing.Point(143, 311);
+            this.txtSquadra.Location = new System.Drawing.Point(133, 253);
+            this.txtSquadra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSquadra.Name = "txtSquadra";
-            this.txtSquadra.Size = new System.Drawing.Size(232, 22);
+            this.txtSquadra.Size = new System.Drawing.Size(149, 20);
             this.txtSquadra.TabIndex = 14;
             // 
             // lblSquadra
             // 
             this.lblSquadra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lblSquadra.Location = new System.Drawing.Point(12, 313);
+            this.lblSquadra.Location = new System.Drawing.Point(9, 254);
+            this.lblSquadra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSquadra.Name = "lblSquadra";
-            this.lblSquadra.Size = new System.Drawing.Size(125, 23);
+            this.lblSquadra.Size = new System.Drawing.Size(120, 19);
             this.lblSquadra.TabIndex = 13;
             this.lblSquadra.Text = "SQUADRA";
             // 
             // txtNumeroMaglia
             // 
-            this.txtNumeroMaglia.Location = new System.Drawing.Point(143, 344);
+            this.txtNumeroMaglia.Location = new System.Drawing.Point(133, 280);
+            this.txtNumeroMaglia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNumeroMaglia.Name = "txtNumeroMaglia";
-            this.txtNumeroMaglia.Size = new System.Drawing.Size(232, 22);
+            this.txtNumeroMaglia.Size = new System.Drawing.Size(149, 20);
             this.txtNumeroMaglia.TabIndex = 16;
             // 
             // lblNumeroMaglia
             // 
             this.lblNumeroMaglia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lblNumeroMaglia.Location = new System.Drawing.Point(12, 346);
+            this.lblNumeroMaglia.Location = new System.Drawing.Point(9, 281);
+            this.lblNumeroMaglia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumeroMaglia.Name = "lblNumeroMaglia";
-            this.lblNumeroMaglia.Size = new System.Drawing.Size(125, 23);
+            this.lblNumeroMaglia.Size = new System.Drawing.Size(120, 19);
             this.lblNumeroMaglia.TabIndex = 15;
             this.lblNumeroMaglia.Text = "NUMERO MAGLIA";
             // 
             // frmGiocatori
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.txtNumeroMaglia);
             this.Controls.Add(this.lblNumeroMaglia);
             this.Controls.Add(this.txtSquadra);
